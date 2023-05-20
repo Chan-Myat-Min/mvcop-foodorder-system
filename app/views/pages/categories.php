@@ -14,84 +14,22 @@
             </div>
         </a>
 
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/burger.jpg" alt="Burger" class="img-responsive img-curve">
 
-                <h3 class="float-text text-white">Burger</h3>
-            </div>
-        </a>
+        <?php
+        foreach ($data['tbl_category'] as $category) {
+            if ($category['active'] == "Yes") {
+        ?>
+                <a href="category-foods.html">
+                    <div class="box-3 float-container">
+                        <img src="<?php echo URLROOT; ?>/category_images/<?php echo $category['image']; ?>" alt="Pizza" class="img-responsive img-curve">
 
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/momo.jpg" alt="Momo" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Momo</h3>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Pizza</h3>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/burger.jpg" alt="Burger" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Burger</h3>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/momo.jpg" alt="Momo" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Momo</h3>
-            </div>
-        </a>
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Pizza</h3>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/burger.jpg" alt="Burger" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Burger</h3>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/momo.jpg" alt="Momo" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Momo</h3>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Pizza</h3>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="box-3 float-container">
-                <img src="<?= URLROOT; ?>/images/burger.jpg" alt="Burger" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Burger</h3>
-            </div>
-        </a>
+                        <h3 class="float-text text-white"><?php echo $category['title']; ?></h3>
+                    </div>
+                </a>
+        <?php
+            }
+        }
+        ?>
 
         <a href="#">
             <div class="box-3 float-container">

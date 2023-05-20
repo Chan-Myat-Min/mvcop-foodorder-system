@@ -2,12 +2,12 @@
 
 class FoodModel
 {
-    private $id;  
-    private $title; 
-    private $description; 
+    private $id;
+    private $title;
+    private $description;
     private $price;
     private $image;
-    private $category_id;
+    private $categoryId;
     private $featured;
     private $active;
 
@@ -63,13 +63,13 @@ class FoodModel
         return $this->image;
     }
 
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        $this->category_id = $category_id;
+        $this->categoryId = $categoryId;
     }
     public function getCategoryId()
     {
-        return $this->category_id;
+        return $this->categoryId;
     }
 
 
@@ -97,6 +97,7 @@ class FoodModel
         return [
             'id'    => $this->getId(),
             'title'   => $this->getTitle(),
+            'price' => $this->getPrice(),
             'description'   => $this->getDescription(),
             'image'  => $this->getFoodImage(),
             'category_id'  => $this->getCategoryId(),

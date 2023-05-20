@@ -16,50 +16,56 @@
                 <th>Price</th>
                 <th>Image</th>
                 <th>Description</th>
+                <th>Featured</th>
+                <th>Active</th>
                 <th>Actions</th>
             </tr>
 
             <?php
             $sn = 1;
             foreach ($data['tbl_food'] as $tbl_food) {
-           
+
 
             ?>
 
 
-            <tr>
-                <td><?= $sn++; ?></td>
-                <td><?= $tbl_food['title']; ?></td>
-                <td><?= $tbl_food['price']; ?></td>
-                <td>
-                    <?php
-                    $foodImage = $tbl_food['image'];
-                    if ($foodImage != "") {
-                    ?>
-                        <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $foodImage; ?>" width="100px">
-                    <?php
+                <tr>
+                    <td><?= $sn++; ?></td>
+                    <td><?= $tbl_food['title']; ?></td>
+                    <td><?= $tbl_food['price']; ?></td>
+                    <td>
+                        <?php
+                        $foodImage = $tbl_food['image'];
+                        if ($foodImage != "") {
+                        ?>
+                            <img src="<?php echo URLROOT; ?>/public/food_images/<?php echo $foodImage; ?>" width="100px">
+                        <?php
 
-                    } else {
-                    ?>
-                        <div><?= setMessage('error', 'Image is not Available'); ?></div>
-                    <?php
-                    }
-                    ?>
-                </td>
+                        } else {
+                        ?>
+                            <div><?= setMessage('error', 'Image is not Available'); ?></div>
+                        <?php
+                        }
+                        ?>
+                    </td>
 
-                <td><?= $tbl_food['description']; ?></td>
+                    <td><?= $tbl_food['description']; ?></td>
 
-                <td>
-
-                    <a href="#" class="btn-secondary">Update Food</a>
-                    <a href="#" class="btn-danger">Delete Food</a>
-
-                </td>
-                </td>
-            </tr>
+                    <td>
+                        <?= $tbl_food['featured']; ?>
+                    </td>
+                    <td>
+                        <?= $tbl_food['active']; ?>
+                    </td>
+                    <td>
+                        <a href="<?php echo URLROOT; ?>/Food/edit/<?php echo base64_encode($tbl_food['id']);  ?>" class="btn-secondary">Update Food</a>
+                        <a href="<?= URLROOT; ?>/Food/destroy/<?php echo $tbl_food['id']; ?>" class="btn-danger">Delete Food</a>
+                    </td>
+                    </td>
+                </tr>
             <?php
-        }
-        ?>
+            }
+            ?>
 
         </table>
 

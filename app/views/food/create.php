@@ -37,14 +37,24 @@
                     <td>Category: </td>
                     <td>
                         <select name="category">
-                                                
-                        <option value="0">A Category found</option>
-                        <option value="1">B Category found</option>
-                        <option value="2">C Category found</option>
+                            <?php foreach ($data['tbl_category']  as $category) {
+                                $categoryFeatured = $category['featured'];
+                                if ($categoryFeatured == 'Yes') {
+                                    $categoryID = $category['id'];
+                                    $categoryTitle = $category['title'];
+
+                            ?>
+                                    <option value="<?= $categoryID; ?>"><?= $categoryTitle; ?></option>
+
+                            <?php
+                                }
+                            } ?>
 
 
 
                         </select>
+                    </td>
+
                     </td>
                 </tr>
                 <tr>
@@ -74,4 +84,3 @@
 
 </div>
 <?php require_once APPROOT . '/views/inc/admin/footer.php'; ?>
-

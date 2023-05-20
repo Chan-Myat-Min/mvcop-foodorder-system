@@ -47,8 +47,8 @@
                     <td><?= $category['featured']; ?></td>
                     <td><?= $category['active']; ?></td>
                     <td>
-                        <a href="#" class="btn-secondary">Update Category</a>
-                        <a href="#" class="btn-danger">Delete Category</a>
+                        <a href="<?php echo URLROOT; ?>/Category/edit/<?php echo base64_encode($category['id']);  ?>" class="btn-secondary">Update Category</a>
+                        <a href="<?php echo URLROOT; ?>/Category/destroy/<?php echo $category['id']; ?>" class="btn-danger">Delete Category</a>
 
                     </td>
                     </td>
