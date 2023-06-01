@@ -9,6 +9,11 @@
 
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js"></script>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
 </head>
 
 <body>
@@ -31,6 +36,13 @@
                     </li>
                     <li>
                         <a href="<?php echo URLROOT; ?>/pages/food">Foods</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo URLROOT; ?>/pages/order">Order</a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo URLROOT; ?>/pages/profile">Profile</a>
                     </li>
                     <li>
                         <a href="<?php echo URLROOT; ?>/pages/login">Log out</a>

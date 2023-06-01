@@ -58,7 +58,7 @@
                         <?= $tbl_food['active']; ?>
                     </td>
                     <td>
-                        <a href="<?php echo URLROOT; ?>/Food/edit/<?php echo base64_encode($tbl_food['id']);  ?>" class="btn-secondary">Update Food</a>
+                        <a href="<?php echo URLROOT; ?>/Food/editFood/<?php echo base64_encode($tbl_food['id']);  ?>" class="btn-secondary">Update Food</a>
                         <a href="<?= URLROOT; ?>/Food/destroy/<?php echo $tbl_food['id']; ?>" class="btn-danger">Delete Food</a>
                     </td>
                     </td>

@@ -12,12 +12,14 @@
     <div class="menu text-center">
         <div class="wrapper">
             <ul>
-                <li><a href="<?php echo URLROOT; ?>/dashboard">Home</a></li>
+                <li><a href="<?php echo URLROOT; ?>/Dashboard">Home</a></li>
                 <li><a href="<?php echo URLROOT; ?>/Dashboard/admin">Admin</a></a></li>
                 <li><a href="<?php echo URLROOT; ?>/Dashboard/category">Category</a></li>
                 <li><a href="<?php echo URLROOT; ?>/Dashboard/food">Food</a></li>
-                <li><a href="manage-order.php">Order</a></li>
-                <li><a href="logout.php">Log Out</a></li>
+                <li><a href="<?php echo URLROOT; ?>/Dashboard/order">Order</a></li>
+                <li><a href="<?php echo URLROOT; ?>/Dashboard/deliveryCompany">DeliveryCompany</a></li>
+                <li><a href="<?php echo URLROOT; ?>/Dashboard/delivery">Delivery</a></li>
+                <li><a href="<?php echo URLROOT; ?>/pages/login">Log Out</a></li>
 
 
             </ul>

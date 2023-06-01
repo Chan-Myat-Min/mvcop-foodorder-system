@@ -2,183 +2,174 @@
 Auithor: Vijay Thapa;
 Theme: Food Order Website Admin
 */
-
-*{
-    margin:0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.wrapper{
-    padding: 1;
-    width: 80%;
-    margin: 1% auto;
+.wrapper {
+  padding: 1;
+  width: 80%;
+  margin: 1% auto;
 }
-.text-center{
-    text-align: center;
-    }
-.clearfix{
-    float: none;
-    clear: both;
+.text-center {
+  text-align: center;
 }
-.tbl-full{
-    width: 100%;
+.clearfix {
+  float: none;
+  clear: both;
 }
-.tbl-30{
-    width: 30%;
+.tbl-full {
+  width: 100%;
 }
-table tr th{
-    border-bottom: 1px solid black;
-    padding: 1%;
-    text-align: left;
+.tbl-30 {
+  width: 30%;
 }
-table tr td{
-    padding: 1%;
-
+table tr th {
+  border-bottom: 1px solid black;
+  padding: 1%;
+  text-align: left;
 }
-.btn-primary{
-    background-color: #3742fa;
-    padding:1%;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+table tr td {
+  padding: 1%;
 }
-.btn-primary:hover{
-    background-color: #121aa4c7;
+.btn-primary {
+  background-color: #3742fa;
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
-.btn-secondary{
-    background-color: #7bed9f;
-    padding:1%;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.btn-primary:hover {
+  background-color: #121aa4c7;
+}
+.btn-secondary {
+  background-color: #7bed9f;
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.btn-secondary:hover{
-    background-color: #076e29;
+.btn-secondary:hover {
+  background-color: #076e29;
 }
-.btn-danger{
-    background-color: #ff4757;
-    padding:1%;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.btn-danger {
+  background-color: #ff4757;
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
-.btn-danger:hover{
-    background-color: #55090e;
+.btn-danger:hover {
+  background-color: #55090e;
 }
-.success{
-    color:#7bed9f;
+.success {
+  color: #7bed9f;
 }
-.error{
-    color:#ff3838;
+.error {
+  color: #ff3838;
 }
 
 /* CSS for Menu*/
-.menu{
-    text-align: center;
-    border-bottom: 1px solid black;
+.menu {
+  text-align: center;
+  border-bottom: 1px solid black;
 }
-.menu ul{
-    list-style-type: none;
-
+.menu ul {
+  list-style-type: none;
 }
-.menu ul li{
-    display:inline;
-    padding:1%;
-    text-decoration: none;
+.menu ul li {
+  display: inline;
+  padding: 1%;
+  text-decoration: none;
 }
-.menu ul li a{
-    text-decoration: none;
-    font-weight: bold;
-    color: #ff6b81;
+.menu ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff6b81;
 }
-.menu ul li a:hover{
-    color:#ff4757
+.menu ul li a:hover {
+  color: #ff4757;
 }
 /* CSS  for main-contant*/
-.main-content{
-    
-    background-color: #dcdfe8;
-    padding: 3% 0;
+.main-content {
+  background-color: #dcdfe8;
+  padding: 3% 0;
 }
 
-.col-4{
-    width: 18%;
-    background-color: white;
-    margin: 1%;
-    padding: 2%;
-    float: left;
+.col-4 {
+  width: 18%;
+  background-color: white;
+  margin: 1%;
+  padding: 2%;
+  float: left;
 }
-
-
 
 /* CSS for Footer*/
 
-.footer{
-    background-color: #ff4757;
-    padding: 0.25%;
-} 
+.footer {
+  background-color: #ff4757;
+  padding: 0.25%;
+}
 
 /* 
 
 CSS for Login */
 
-.login{
-    width: 382px;
-    overflow: hidden;
-    margin: auto;
-    margin: 20 0 0 450px;
-    padding: 80px;
-    background: #23463f;
-    border-radius: 15px ;
-
+.login {
+  width: 382px;
+  overflow: hidden;
+  margin: auto;
+  margin: 20 0 0 450px;
+  padding: 80px;
+  background: #23463f;
+  border-radius: 15px;
 }
 /* h2{
 text-align: center;
 color: #277582;
 padding: 20px;
 } */
-label{
-color: #08ffd1;
-font-size: 17px;
+label {
+  color: #08ffd1;
+  font-size: 17px;
 }
-.Uname{
-width: 400px;
-height: 30px;
-border: none;
-border-radius: 3px;
-padding-left: 8px;
+.Uname {
+  width: 400px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
 }
-.Pass{
-width: 400px;
-height: 30px;
-border: none;
-border-radius: 3px;
-padding-left: 8px;
-
+.Pass {
+  width: 400px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
 }
-.log{
-width: 300px;
-height: 30px;
-border: none;
-border-radius: 17px;
-padding-left: 7px;
-color: rgb(239, 239, 244);
-text-align: center;
-
+.log {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  color: rgb(239, 239, 244);
+  text-align: center;
 }
-span{
-color: white;
-font-size: 17px;
+span {
+  color: white;
+  font-size: 17px;
 }
-.btn-login{
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 17px;
-    padding-left: 7px;
-    color: rgb(9, 9, 254);
-}  
+.btn-login {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  color: rgb(9, 9, 254);
+}
 /* a{
 float: right;
 background-color: grey;

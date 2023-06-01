@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppons", sans-serif;
+  font-size: 16px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 150px;
+  height: 6rem;
+  border-bottom: 1px solid #ccc;
+}
+.header p {
+  font-size: 30px;
+  font-weight: bold;
+  color: #18bdfe;
+}
+ul {
+  list-style: none;
+  display: flex;
+}

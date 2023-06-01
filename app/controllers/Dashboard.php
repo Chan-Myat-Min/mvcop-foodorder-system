@@ -56,6 +56,38 @@ class Dashboard extends Controller
     {
         $tbl_category = $this->db->readAll('tbl_category');
         $data = ['tbl_category' => $tbl_category];
-        $this->view('food/create' , $data);
+        $this->view('food/create', $data);
+    }
+
+    //for order
+    public function order()
+    {
+        $tbl_order = $this->db->readAll('tbl_order');
+        $data = ['tbl_order' => $tbl_order];
+
+        $this->view('order/table', $data);
+    }
+
+
+    //for deli COmpany
+    public function deliveryCompany()
+    {
+        $deliveryCompany = $this->db->readAll('delivery_company');
+        $data = ['delivery_company' => $deliveryCompany];
+        $this->view('deliverycompany/table', $data);
+    }
+    public function createDeliveryCompany()
+    {
+        $this->view('deliverycompany/create');
+    }
+
+    //for delivery
+    public function delivery()
+    {
+        $this->view('delivery/table');
+    }
+    public function createDelivery()
+    {
+        $this->view('delivery/create');
     }
 }

@@ -147,4 +147,18 @@
                 redirect('Dashboard/food');
             }
         }
+        public function editFood($id)
+        {
+            $id = base64_decode($id);
+            $category = $this->db->readAll('tbl_category');
+            $foodId = $this->db->getById('tbl_food', $id);
+            $data = [
+                'category' => $category,
+                'food' => $foodId
+            ];
+    
+            $this->view('food/edit', $data);
+        }
+
+
     }

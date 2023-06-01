@@ -55,6 +55,18 @@ class Database
         }
     }
 
+
+    public function getAddressId($table, $street_id)
+    {
+
+        $sql = 'SELECT * FROM ' . $table . ' WHERE  street_id =:street_id';
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':street_id', $street_id);
+        $success = $stm->execute();
+        $row = $stm->fetch(PDO::FETCH_ASSOC);
+        return $success ? $row : [];
+    }
+
     // public function create($table, $data)
     // {
     //     try {
@@ -208,6 +220,114 @@ class Database
         $row = $stm->fetch(PDO::FETCH_ASSOC);
         return ($success) ? $row : [];
     }
+    public function getByIdAll($table, $id)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `user_ID` =:id';
+        // print_r($sql);
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':id', $id);
+        $success = $stm->execute();
+        $row = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+
+    public function getByIdView($table, $id)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `order_ID` =:id';
+        // print_r($sql);
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':id', $id);
+        $success = $stm->execute();
+        $row = $stm->fetch(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+
+
+    public function getByEmail($table, $email)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `email` =:email';
+        // print_r($sql);
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':email', $email);
+        $success = $stm->execute();
+        $row = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+
+    public function getByEmailOne($table, $email)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `email` =:email';
+        // print_r($sql);
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':email', $email);
+        $success = $stm->execute();
+        $row = $stm->fetch(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+
+
+
+
+    public function getBySessionEmail($table, $email)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `email` =:email';
+        // print_r($sql);
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':email', $email);
+        $success = $stm->execute();
+        $row = $stm->fetch(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+    public function getBySessionEmailAll($table, $email)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `email` =:email';
+        // print_r($sql);
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':email', $email);
+        $success = $stm->execute();
+        $row = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+
+
+
+    public function getByCompanyName($table, $key, $companyName)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $key . ' =:' . $key;
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':' . $key, $companyName);
+        $success = $stm->execute();
+        $row = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+        return ($success) ? $row : [];
+    }
+
+    public function getPriceByAddressNameAndCompanyName($table, $key1, $value1, $key2, $value2)
+    {
+        $sql = "SELECT * FROM $table WHERE $key1 = :value1 AND $key2 = :value2";
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':value1', $value1);
+        $stm->bindValue(':value2', $value2);
+        $success = $stm->execute();
+        $rows = $stm->fetch(PDO::FETCH_ASSOC);
+        return ($success) ? $rows : [];
+    }
+
+
+
+
+
+    public function getByAddressId($table, $key, $id)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $key . ' =:' . $key;
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':' . $key, $id);
+        $success = $stm->execute();
+        $row = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+
+
 
     public function getByCategoryId($table, $column)
     {
