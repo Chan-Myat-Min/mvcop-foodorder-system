@@ -6,23 +6,6 @@
 
 
 
-
-        <?php
-
-        // $categoryParameterId = $_GET['id'];
-
-        // foreach ($data['category'] as $category) {
-        // $categoryTableId = $category['id'];
-        // if ($categoryParameterId == $categoryTableId) {
-        // $categoryTitle = $category['title'];
-        // $categoryCurrentImagename = $category['image_name'];
-        // $categoryFeatured = $category['featured'];
-        // $categoryActive = $category['active'];
-        // }
-        // }
-
-        ?>
-
         <form action="<?php echo URLROOT; ?>/Food/update" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $data['food']['id']; ?>">
             <input type="hidden" name="current_image" value="<?php echo $data['food']['image']; ?>">
@@ -82,8 +65,8 @@
                 <td>
                     <select name="=category">
                         <?php foreach ($data['category']  as $category) {
-                            $categoryFeatured = $category['featured'];
-                            if ($categoryFeatured == 'Yes') {
+                            $categoryActive = $category['active'];
+                            if ($categoryActive == 'Yes') {
                                 $categoryID = $category['id'];
                                 $categoryTitle = $category['title'];
 

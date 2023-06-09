@@ -9,8 +9,12 @@ $sessionEmail = $_SESSION['email'];
 $user = $database->getBySessionEmail('users', $sessionEmail);
 
 $user_id = $user['id'];
-// print_r($user_id);
+//print_r($user_id);
+
 $userDetails = $database->getByIdAll('vw_orderall', $user_id);
+// echo "<pre>";
+// print_r($userDetails);
+// exit;
 
 
 ?>
@@ -38,9 +42,9 @@ $userDetails = $database->getByIdAll('vw_orderall', $user_id);
         ?>
             <tr>
                 <td><?= $sn++; ?></td>
-                <td><?= $userDetail['name']; ?></td>
-                <td><?= $userDetail['title']; ?></td>
-                <td><?= $userDetail['food_Price']; ?></td>
+                <td><?= $userDetail['user_Name']; ?></td>
+                <td><?= $userDetail['food_Name']; ?></td>
+                <td><?= $userDetail['Food_Price']; ?></td>
                 <td><?= $userDetail['qty']; ?></td>
                 <td><?= $userDetail['total']; ?></td>
                 <td><?= $userDetail['status']; ?></td>

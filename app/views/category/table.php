@@ -14,7 +14,6 @@
                 <th>S.N</th>
                 <th>Title</th>
                 <th>Images</th>
-                <th>Featured</th>
                 <th>Active</th>
                 <th>Actions</th>
             </tr>
@@ -44,7 +43,7 @@
 
                         ?>
                     </td>
-                    <td><?= $category['featured']; ?></td>
+
                     <td><?= $category['active']; ?></td>
                     <td>
                         <a href="<?php echo URLROOT; ?>/Category/edit/<?php echo base64_encode($category['id']);  ?>" class="btn-secondary">Update Category</a>

@@ -18,7 +18,7 @@ $userEmail = $user['email'];
 $userPhone_number = $user['phone_number'];
 
 
-$userDetails = $database->getByEmail('vw_userprofile', $sessionEmail);
+$userDetails = $database->getByEmail('vw_userprofileupdate', $sessionEmail);
 
 //$userName = $userDetails[0]['name'];
 //$userEmail = $userDetails[0]['email'];

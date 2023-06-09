@@ -222,7 +222,7 @@ class Database
     }
     public function getByIdAll($table, $id)
     {
-        $sql = 'SELECT * FROM ' . $table . ' WHERE `user_ID` =:id';
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `user_Id` =:id';
         // print_r($sql);
         $stm = $this->pdo->prepare($sql);
         $stm->bindValue(':id', $id);
@@ -241,6 +241,44 @@ class Database
         $row = $stm->fetch(PDO::FETCH_ASSOC);
         return ($success) ? $row : [];
     }
+    public function getByUserAddress($table, $id)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `user_address` =:id';
+        // print_r($sql);
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':id', $id);
+        $success = $stm->execute();
+        $row = $stm->fetch(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+
+
+    public function getByIddeliveryPriceView($table, $id)
+    {
+        $sql = 'SELECT * FROM ' . $table . ' WHERE `deliveryPrice_ID` =:id';
+        // print_r($sql);
+        $stm = $this->pdo->prepare($sql);
+        $stm->bindValue(':id', $id);
+        $success = $stm->execute();
+        $row = $stm->fetch(PDO::FETCH_ASSOC);
+        return ($success) ? $row : [];
+    }
+
+
+
+
+    // public function getByDeliveryPriceIdView($table, $id)
+    // {
+    //     $sql = 'SELECT * FROM ' . $table . ' WHERE `deliveryPrice_ID` =:id';
+    //     // print_r($sql);
+    //     $stm = $this->pdo->prepare($sql);
+    //     $stm->bindValue(':id', $id);
+    //     $success = $stm->execute();
+    //     $row = $stm->fetch(PDO::FETCH_ASSOC);
+    //     return ($success) ? $row : [];
+    // }
+
+
 
 
     public function getByEmail($table, $email)
@@ -304,12 +342,15 @@ class Database
 
     public function getPriceByAddressNameAndCompanyName($table, $key1, $value1, $key2, $value2)
     {
+
         $sql = "SELECT * FROM $table WHERE $key1 = :value1 AND $key2 = :value2";
         $stm = $this->pdo->prepare($sql);
         $stm->bindValue(':value1', $value1);
         $stm->bindValue(':value2', $value2);
         $success = $stm->execute();
         $rows = $stm->fetch(PDO::FETCH_ASSOC);
+        // print_r($rows);
+        // exit;
         return ($success) ? $rows : [];
     }
 

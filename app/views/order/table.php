@@ -20,7 +20,6 @@ $orders = $database->readAll('vw_orderall');
             <tr>
                 <th>S.N</th>
                 <th>Order ID</th>
-                </th>
                 <th>Food Name </th>
                 <th>Quantity </th>
                 <th>Price</th>
@@ -41,21 +40,21 @@ $orders = $database->readAll('vw_orderall');
             ?>
                 <tr>
                     <td><?= $sn++; ?> </td>
-                    <td><?= $order['order_ID']; ?> </td>
-                    <td><?= $order['title']; ?> </td>
+                    <td><?= $order['order_Id']; ?> </td>
+                    <td><?= $order['food_Name']; ?> </td>
                     <td><?= $order['qty']; ?> </td>
-                    <td><?= $order['food_Price']; ?>MMK</td>
+                    <td><?= $order['Food_Price']; ?>MMK</td>
                     <td><?= $order['total']; ?>MMK</td>
                     <td><?= $order['order_date']; ?> </td>
                     <td><?= $order['status']; ?> </td>
-                    <td><?= $order['name']; ?> </td>
+                    <td><?= $order['user_Name']; ?> </td>
                     <td><?= $order['user_address']; ?> </td>
                     <td><?= $order['delivery_Price']; ?> </td>
                     <td><?= $order['delivery_CompanyName']; ?> </td>
                     <td><?= $order['phone_number']; ?> </td>
 
                     <td>
-                        <a href="<?php echo URLROOT; ?>/Order/editAdminOrder/<?php echo $order['order_ID']; ?>" class="btn-secondary">Update Order</a>
+                        <a href="<?php echo URLROOT; ?>/Order/editAdminOrder/<?php echo $order['order_Id']; ?>" class="btn-secondary">Update Order</a>
                         <a href="" class="btn-danger">Delete Order</a>
                     </td>
                 </tr>
@@ -63,10 +62,6 @@ $orders = $database->readAll('vw_orderall');
             }
 
             ?>
-
-
-
-
 
 
 

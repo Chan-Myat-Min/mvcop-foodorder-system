@@ -53,5 +53,3 @@
 
 <!--  Main Content Ends-->
 <?php require_once APPROOT . '/views/inc/admin/footer.php'; ?>
-
-?

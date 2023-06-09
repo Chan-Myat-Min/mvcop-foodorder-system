@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Order extends Controller
 {
 
@@ -9,9 +9,6 @@ class Order extends Controller
         $this->db = new Database();
         $this->model('OrderModel');
     }
-
-
-
     public function foodOrder($id)
     {
 
@@ -37,11 +34,6 @@ class Order extends Controller
         $this->view('order/edit', $data);
     }
 
-
-
-
-
-
     public function store()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -53,11 +45,15 @@ class Order extends Controller
             $order_date = date("Y-m-d h:i:sa");
             $status_id = "4";
             $user_id = $_POST['user_id'];
-            $address_id = $_POST['address_id'];
+            $user_address = $_POST['address_id'];
+
+            $user_id = $this->db->getByUserAddress('vw_userprofileupdate', $user_address);
+            $address_id = $user_id['address_id'];
+
+
             $delivery_priceID = $_POST['delivery_priceID'];
             $delivery_companyID = $_POST['delivery_companyID'];
             $phone_number = $_POST['phone_number'];
-
 
 
             $order = new OrderModel();
@@ -115,7 +111,7 @@ class Order extends Controller
 
 
             $iscreated = $this->db->update('tbl_order', $order->getId(), $order->toArray());
-            redirect('order/table');
+            redirect('Dashboard/index');
         }
     }
 }

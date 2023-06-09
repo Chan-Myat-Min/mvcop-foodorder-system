@@ -18,25 +18,29 @@
     <div class="container">
         <h2 class="text-center">Explore Foods</h2>
 
+
         <?php
-        $count = 0;
-        foreach ($data['category'] as $category) {
-            $count++;
-            if ($count < 4) {
-                if ($category['featured'] == "Yes" && $category['active'] == "Yes") {
-                    $categoryId = $category['id'];
+        //filter food array based on the condition
+        $filteredCategory = array_filter($data['category'], function ($category) {
+            return $category['active'] == 'Yes';
+        });
+
+        // Get random keys from the food array
+        $randomKeys = (count($filteredCategory) >= 3) ? array_rand($filteredCategory, 3) : array_keys($filteredCategory);
+
+        foreach ($randomKeys as $key) {
+            $category = $filteredCategory[$key];
+
+            // if ($food['featured'] == "Yes" && $food['active'] == 'Yes') {
         ?>
-                    <a href="category-foods.html">
+         <a href="category-foods.html">
                         <div class="box-3 float-container">
                             <img src="<?= URLROOT; ?>/category_images/<?= $category['image']; ?>" alt="Pizza" class="img-responsive img-curve">
 
                             <h3 class="float-text text-white"><?= $category['title']; ?></h3>
                         </div>
                     </a>
-
-        <?php
-                }
-            }
+                    <?php  
         }
         ?>
 

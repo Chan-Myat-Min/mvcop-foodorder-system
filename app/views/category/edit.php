@@ -52,19 +52,7 @@
                         <input type="file" name="image">
                     </td>
                 </tr>
-                <tr>
-                    <td>Featured: </td>
 
-                    <td>
-                        <input <?php if ($data['categories']['featured'] == "Yes") {
-                                    echo "Checked";
-                                } ?> type="radio" name="featured" value="Yes">Yes
-                        <input <?php if ($data['categories']['featured'] == "No") {
-                                    echo "Checked";
-                                } ?> type="radio" name="featured" value="No">No
-                    </td>
-
-                </tr>
                 <tr>
                     <td>Active: </td>
                     <td>

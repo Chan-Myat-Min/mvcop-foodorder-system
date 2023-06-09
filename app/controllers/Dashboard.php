@@ -90,4 +90,50 @@ class Dashboard extends Controller
     {
         $this->view('delivery/create');
     }
+
+
+    //for deliveryPrice Table
+    public function deliveryPrice()
+    {
+        $this->view('delivery_Price/table');
+    }
+    public function createDeliveryPrice()
+    {
+        $this->view('delivery_Price/create');
+    }
+    // public function updateDeliveryPrice()
+    // {
+    //     $this->view('delivery_Price/edit');
+    // }
+
+
+
+
+
+    public function editDeliveryPrice($id)
+    {
+
+        $deli_Price_Id = $this->db->getByIddeliveryPriceView('vw_deliveryprice', $id);
+
+
+        // $deli_Price_Id = $this->db->getByDeliveryPriceIdView('vw_deliveryprice', $id);
+
+        $data = [
+            'deli_Price_Id' => $deli_Price_Id
+        ];
+        $this->view('delivery_Price/edit', $data);
+    }
+
+    // public function editAdminOrder($id)
+    // {
+    //     $deli_orderId = $this->db->getByIdView('vw_orderall', $id);
+
+    //     $data = [
+    //         'deli_orderId' => $deli_orderId
+    //     ];
+    //     $this->view('order/edit', $data);
+    // }
+
+
+
 }

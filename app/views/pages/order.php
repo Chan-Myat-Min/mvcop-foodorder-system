@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once APPROOT . '/views/inc/header.php'; ?>
 <?php require_once APPROOT . '/views/components/auth_message.php';
@@ -14,10 +13,11 @@ $user = $database->getByEmailOne('users', $sessionEmail);
 $userId = $user['id'];
 // print_r($userId);
 // exit;
-$userDetails = $database->getBySessionEmailAll('vw_userprofile', $sessionEmail);
+$userDetails = $database->getBySessionEmailAll('vw_userprofileupdate', $sessionEmail);
 $companyDetails = $database->readAll('delivery_company');
-// print_r($userDetails);
-// exit;
+echo "<pre>";
+print_r($userDetails);
+exit;
 
 ?>
 

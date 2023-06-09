@@ -1,5 +1,4 @@
 <?php
-
 class Category extends Controller
 {
     private $db;
@@ -14,12 +13,8 @@ class Category extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $title = $_POST['title'];
-            // echo $title;
-            // exit;
             $msg = "";
-            $image = $_FILES['image']['name'];
-            // echo $image;
-            // exit;
+            $image = $_FILES['image']['name'];;
             $target = "category_images/" . basename($image); //$target = "../../../public/images/categoryPhoto/" . basename($image);
 
             if (!file_exists('category_images/')) {
@@ -31,18 +26,8 @@ class Category extends Controller
             } else {
                 $msg = "Faild To Upload Image";
             }
+            $active = $_POST['active'];
 
-            if (isset($_POST['featured'])) {
-                $featured = $_POST['featured'];
-            } else {
-                $featured = "No";
-            }
-
-            if (isset($_POST['active'])) {
-                $active = $_POST['active'];
-            } else {
-                $active = "No";
-            }
 
 
             $category = new CategoryModel();
@@ -50,7 +35,6 @@ class Category extends Controller
 
             $category->setTitle($title);
             $category->setImage($image);
-            $category->setFeatured($featured);
             $category->setActive($active);
 
 
@@ -172,26 +156,13 @@ class Category extends Controller
             } else {
                 $image = $current_image;
             }
-
-
-            if (isset($_POST['featured'])) {
-                $featured = $_POST['featured'];
-            } else {
-                $featured = "No";
-            }
-
-            if (isset($_POST['active'])) {
-                $active = $_POST['active'];
-            } else {
-                $active = "No";
-            }
+            $active = $_POST['active'];
 
 
             $category = new CategoryModel();
             $category->setId($id);
             $category->setTitle($title);
             $category->setImage($image);
-            $category->setFeatured($featured);
             $category->setActive($active);
 
             $iscreated = $this->db->update('tbl_category', $category->getId(), $category->toArray());

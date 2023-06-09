@@ -74,4 +74,9 @@ class Pages extends Controller
     {
         $this->view('pages/price_list');
     }
+    //for delivery
+    public function addToCard()
+    {
+        $this->view('pages/add_to_card');
+    }
 }

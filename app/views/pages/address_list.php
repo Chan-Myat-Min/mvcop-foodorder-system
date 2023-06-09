@@ -1,15 +1,17 @@
 <?php
+session_start();
 $database = new Database();
 if (!empty($_GET['companyName'])) {
-    $companyId = $_GET['companyName'];
+    $sessionEmail = $_SESSION['email'];
+    //  $companyId = $_GET['companyName'];
 
-    $addresslists = $database->getByCompanyName('vw_deliverydetails', 'delivery_companyID', $companyId);
+    $addresslists =  $database->getByEmail('vw_userprofileupdate', $sessionEmail);
 
 ?>
     <option value="">Select Address</option>
-    <?php foreach ($addresslists as $addresslist) {
+    <?php foreach ($addresslists as $user) {
     ?>
-        <option value="<?= $addresslist['address_id']; ?>"><?= $addresslist['user_address']; ?></option>
+        <option value="<?= $user['user_address']; ?>"><?= $user['user_address']; ?></option>
 <?php
     }
 }

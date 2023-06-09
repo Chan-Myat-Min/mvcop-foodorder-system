@@ -15,6 +15,8 @@
                 $description = $_POST['description'];
                 $price = $_POST['price'];
                 $categoryId = $_POST['category'];
+                $active = "No";
+                $featured = "No";
                 $msg = "";
                 $image = $_FILES['image']['name'];
                 $target = "food_images/" . basename($image); //$target = "../../../public/images/categoryPhoto/" . basename($image);
@@ -28,19 +30,9 @@
                 } else {
                     $msg = "Faild To Upload Image";
                 }
+                $featured = $_POST['featured'];
+                $active = $_POST['active'];
 
-
-                if (isset($_POST['featured'])) {
-                    $featured = $_POST['featured'];
-                } else {
-                    $featured = "No";
-                }
-
-                if (isset($_POST['active'])) {
-                    $active = $_POST['active'];
-                } else {
-                    $active = "No";
-                }
                 $food = new FoodModel();
 
                 $food->setTitle($title);
@@ -102,25 +94,21 @@
                 $current_image = $_POST['current_image'];
                 $image = $_FILES['image']['name'];
                 if ($image) {
-                    if (!file_exists('food_images/'))  {
+                    if (!file_exists('food_images/')) {
                         mkdir('food_images/', 0777, true);
                     }
                     $target = "food_images/" . $image;
                     $sourcePath = $_FILES['image']['tmp_name'];
                     move_uploaded_file($sourcePath, $target);
-                if ($current_image) {
-                    $remove_path = "food_images/" . $current_image;
-                    if (file_exists($remove_path)) {
-                        unlink($remove_path);
+                    if ($current_image) {
+                        $remove_path = "food_images/" . $current_image;
+                        if (file_exists($remove_path)) {
+                            unlink($remove_path);
+                        }
                     }
-                }
                 } else {
                     $image = $current_image;
                 }
-
-
-
-
 
                 if (isset($_POST['featured'])) {
                     $featured = $_POST['featured'];
@@ -156,9 +144,7 @@
                 'category' => $category,
                 'food' => $foodId
             ];
-    
+
             $this->view('food/edit', $data);
         }
-
-
     }

@@ -5,7 +5,6 @@ class CategoryModel
     private $id;
     private $title;
     private $image;
-    private $featured;
     private $active;
 
 
@@ -39,15 +38,6 @@ class CategoryModel
         return $this->image;
     }
 
-    public function setFeatured($featured)
-    {
-        $this->featured = $featured;
-    }
-
-    public function getFeatured()
-    {
-        return $this->featured;
-    }
     public function setActive($active)
     {
         $this->active = $active;
@@ -64,7 +54,6 @@ class CategoryModel
             'id'    => $this->getId(),
             'title'   => $this->getTitle(),
             'image'  => $this->getImage(),
-            'featured'   => $this->getFeatured(),
             'active'   => $this->getActive()
         ];
     }

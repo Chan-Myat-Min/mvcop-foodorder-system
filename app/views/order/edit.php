@@ -15,15 +15,15 @@
 
         <form action="<?php echo URLROOT; ?>/Order/update" method="POST" enctype="multipart/form-data">
 
-            <input type="hidden" name="order_id" value=" <?= $data['deli_orderId']['order_ID']; ?>">
-            <input type="hidden" name="food_id" value=" <?= $data['deli_orderId']['food_ID']; ?>">
+            <input type="hidden" name="order_id" value=" <?= $data['deli_orderId']['order_Id']; ?>">
+            <input type="hidden" name="food_id" value=" <?= $data['deli_orderId']['food_Id']; ?>">
             <input type="hidden" name="qty" value=" <?= $data['deli_orderId']['qty']; ?>">
             <input type="hidden" name="total" value=" <?= $data['deli_orderId']['total']; ?>">
             <input type="hidden" name="order_date" value=" <?= $data['deli_orderId']['order_date']; ?>">
-            <input type="hidden" name="user_id" value=" <?= $data['deli_orderId']['user_ID']; ?>">
-            <input type="hidden" name="address_id" value=" <?= $data['deli_orderId']['address_ID']; ?>">
-            <input type="hidden" name="price_id" value=" <?= $data['deli_orderId']['price_ID']; ?>">
-            <input type="hidden" name="company_id" value=" <?= $data['deli_orderId']['company_ID']; ?>">
+            <input type="hidden" name="user_id" value=" <?= $data['deli_orderId']['user_Id']; ?>">
+            <input type="hidden" name="address_id" value=" <?= $data['deli_orderId']['address_Id']; ?>">
+            <input type="hidden" name="price_id" value=" <?= $data['deli_orderId']['delivery_priceID']; ?>">
+            <input type="hidden" name="company_id" value=" <?= $data['deli_orderId']['deliveryCompany_ID']; ?>">
             <input type="hidden" name="phone_number" value=" <?= $data['deli_orderId']['phone_number']; ?>">
 
 
@@ -32,14 +32,14 @@
                 <tr>
                     <td>Order ID: </td>
                     <td>
-                        <?= $data['deli_orderId']['order_ID']; ?>
+                        <?= $data['deli_orderId']['order_Id']; ?>
 
                     </td>
                 </tr>
                 <tr>
                     <td>Food Name: </td>
                     <td>
-                        <?= $data['deli_orderId']['title']; ?>
+                        <?= $data['deli_orderId']['food_Name']; ?>
                     </td>
                 </tr>
                 <tr>
@@ -51,7 +51,7 @@
                 <tr>
                     <td>Price: </td>
                     <td>
-                        <?= $data['deli_orderId']['food_Price']; ?>
+                        <?= $data['deli_orderId']['Food_Price']; ?>
                     </td>
                 </tr>
                 <tr>
@@ -86,7 +86,7 @@
                 <tr>
                     <td>User Name: </td>
                     <td>
-                        <?= $data['deli_orderId']['name']; ?>
+                        <?= $data['deli_orderId']['user_Name']; ?>
 
                     </td>
                 </tr>
